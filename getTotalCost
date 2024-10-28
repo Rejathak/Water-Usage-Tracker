@@ -1,0 +1,4 @@
+ private double getTotalCost() {
+        double totalConsumption = getTotalConsumption();
+        return totalConsumption * costPerLiter;
+    }

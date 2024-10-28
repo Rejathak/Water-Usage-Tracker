@@ -1,0 +1,21 @@
+// Function to calculate average cost per household (or entry)
+private double getAverageCost() {
+    double totalCost = getTotalCost();
+    int totalEntries = getTotalEntries();
+    return totalEntries > 0 ? totalCost / totalEntries : 0;
+}
+
+// Function to get the total number of entries (households)
+private int getTotalEntries() {
+    int totalEntries = 0;
+    String query = "SELECT COUNT(*) as total_entries FROM Water_Consumption";
+    
+    try (Connection conn = DatabaseConnector.connect(); Statement stmt = conn.createStatement(); ResultSet rs = stmt.executeQuery(query)) {
+        if (rs.next()) {
+            totalEntries = rs.getInt("total_entries");
+        }
+    } catch (SQLException e) {
+        System.out.println("Failed to fetch total entries: " + e.getMessage());
+    }
+    return totalEntries;
+}
