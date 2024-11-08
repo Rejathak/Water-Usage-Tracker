@@ -20,8 +20,8 @@ public class DatabaseConnector {
     public static Connection connect() {
         try {
             String url = "jdbc:mysql://localhost:3306/water_usage"; // Update with your database info
-            String user = "root"; // Your MySQL username
-            String password = "Rakhack123"; // Your MySQL password
+            String user = ""; // Your MySQL username
+            String password = ""; // Your MySQL password
             return DriverManager.getConnection(url, user, password);
         } catch (SQLException e) {
             System.out.println("Failed to connect to the database: " + e.getMessage());
