@@ -9,8 +9,8 @@ public class DatabaseConnector {
         Connection conn = null;
         try {
             String url = "jdbc:mysql://localhost:3306/water_usage_tracker";
-            String user = "root"; 
-            String password = "Rakhack123"; 
+            String user = ""; 
+            String password = ""; 
             conn = DriverManager.getConnection(url, user, password);
             System.out.println("Connected to the database.");
         } catch (SQLException e) {
